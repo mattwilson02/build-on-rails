@@ -193,6 +193,12 @@ for (const file of ['docs/workflow.md', 'docs/testing/strategy.md']) {
     err(file, 'status must be draft or approved');
 }
 
+// ---- placeholders left from the kit ----
+for (const file of ['CLAUDE.md', 'docs/README.md']) {
+  if (existsSync(join(root, file)) && read(file).includes('<Project>'))
+    warn(file, 'still has the <Project> placeholder from the kit. Fill it in');
+}
+
 // ---- relative links ----
 const mdFiles = [
   ...walk(join(root, 'docs'), (f) => f.endsWith('.md')),

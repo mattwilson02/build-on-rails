@@ -1,7 +1,7 @@
 # Adopting it
 
-1. Copy the contents of `kit/` into your repo root, dotfiles included: `cp -R kit/. /path/to/your-repo/`.
-2. Edit `CLAUDE.md`: name the project, add your build, lint and test commands.
+1. Copy the contents of `kit/` into your repo root, dotfiles included: `cp -R kit/. /path/to/your-repo/`. Open the adoption PR as `chore:`, not `docs:`. A `docs` PR may only touch docs and repo config, and the kit adds scripts and hooks.
+2. Edit `CLAUDE.md` and `docs/README.md`: replace `<Project>`, and add your build, lint and test commands. `check-docs` warns until the placeholder is gone.
 3. Edit `workflow.config.json`. `newSurface` lists path patterns a fast-lane PR may not add (routes, screens, controllers). Match your layout.
 4. Fill in `docs/testing/strategy.md` for your stack, and add your install, lint and test steps to `.github/workflows/ci.yml`.
 5. Enable the pre-push hook: `git config core.hooksPath .githooks`.

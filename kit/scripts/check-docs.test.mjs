@@ -119,6 +119,12 @@ const featBody = `${filled}\n\n## Requirement IDs\nDEMO-01.1\n\n## Proof\nDEMO-0
 
 test('a valid repo passes', () => passes(run(repo())));
 
+test('a leftover <Project> placeholder is a warning, not an error', () => {
+  const r = run(repo({ ...base(), 'CLAUDE.md': '# <Project>\n' }));
+  passes(r);
+  assert.match(r.out, /placeholder/);
+});
+
 test('a stage ahead of its approvals fails', () => {
   fails(
     run(

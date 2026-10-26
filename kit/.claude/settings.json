@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && node scripts/status.mjs",
+            "timeout": 20,
+            "statusMessage": "Reading project status"
+          }
+        ]
+      }
+    ]
+  }
+}

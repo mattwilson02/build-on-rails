@@ -1,0 +1,6 @@
+{
+  "newSurface": [
+    { "pattern": "^src/(routes|pages|screens)/.+\\.(ts|tsx|js|jsx)$", "label": "route or screen" },
+    { "pattern": "\\.controller\\.(ts|js)$", "label": "endpoint file" }
+  ]
+}

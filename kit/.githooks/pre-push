@@ -1,0 +1,9 @@
+#!/bin/sh
+# Refuses pushes to main and to branches whose PR is already merged or closed. See scripts/check-branch.mjs.
+# Git gives one line per ref being pushed: <local ref> <local sha> <remote ref> <remote sha>.
+zero=0000000000000000000000000000000000000000
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue # deleting a remote branch
+  case "$remote_ref" in refs/heads/*) ;; *) continue ;; esac
+  node scripts/check-branch.mjs "${remote_ref#refs/heads/}" || exit 1
+done

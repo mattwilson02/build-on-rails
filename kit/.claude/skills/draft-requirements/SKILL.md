@@ -7,7 +7,7 @@ description: Draft the Requirements section of a feature file. Use when starting
 
 Stage: requirements. Output: `docs/features/<slug>.md` from `docs/_templates/feature.md`. Nothing else.
 
-1. Read `docs/workflow.md` (Requirements) and one shipped feature file for tone.
+1. Read `docs/workflow.md` (Requirements) and, if there is one, a shipped feature file for tone.
 2. Ask the contributor what the feature is for and who it is for. Do not draft from a guess.
 3. Write one sentence of purpose, then requirements: `### PFX-01 F: Name`, flat, numbered in order, never reused. Type is F, BR, Q or C.
 4. Each requirement gets pass/fail criteria, `- .1 ...`. A criterion a unit test cannot prove starts `[manual]`. A requirement that needs sub-requirements is too big: split it.

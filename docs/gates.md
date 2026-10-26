@@ -12,7 +12,7 @@ Full definitions are in [kit/docs/workflow.md](../kit/docs/workflow.md). This is
 
 ## Why these rules
 
-- **Approvals are a human-only field.** If an agent can set it, it is not a gate. `CLAUDE.md` forbids it and review catches it.
+- **Approvals belong to the contributor.** A script cannot tell who wrote a date, so the rule is explicit: `CLAUDE.md` forbids the agent from setting one, and every approval change shows up in the diff the contributor reviews.
 - **Criteria are pass/fail and tests cite their IDs.** "Done" becomes a lookup, not an opinion.
 - **Docs flow upstream first and change in their own commit.** The reviewer sees the decision before the code that depends on it.
 - **Edit in place.** Docs state the current truth. Git is the history. Appended notes rot.

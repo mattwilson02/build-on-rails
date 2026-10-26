@@ -1,6 +1,6 @@
 # Adopting it
 
-1. Copy the contents of `kit/` into your repo root (including the dotfolders). Keep `docs/`, `scripts/`, `.github/`, `.githooks/`, `.claude/`, `CLAUDE.md`, `CHANGELOG.md` and `workflow.config.json`.
+1. Copy the contents of `kit/` into your repo root, dotfiles included: `cp -R kit/. /path/to/your-repo/`.
 2. Edit `CLAUDE.md`: name the project, add your build, lint and test commands.
 3. Edit `workflow.config.json`. `newSurface` lists path patterns a fast-lane PR may not add (routes, screens, controllers). Match your layout.
 4. Fill in `docs/testing/strategy.md` for your stack, and add your install, lint and test steps to `.github/workflows/ci.yml`.
@@ -8,6 +8,10 @@
 6. Create the labels: `bash scripts/setup-github.sh` (needs `gh`).
 7. Read `docs/workflow.md`, change what you disagree with, and set `status: approved`. Until then the agent is told to ask before starting a feature.
 8. Add your first feature from `docs/_templates/feature.md`. Run `node scripts/status.mjs` and `node scripts/check-docs.mjs`.
+
+## Other agents
+
+The docs, scripts and CI work with any agent. The skills and the session-start hook are Claude Code features. For tools that read `AGENTS.md`, link it to the same rules: `ln -s CLAUDE.md AGENTS.md`.
 
 ## Adapting
 

@@ -4,7 +4,7 @@ status: draft
 
 # Workflow
 
-Draft. Not binding until `status: approved`. Only the contributor approves it.
+Draft. Not binding until `status: approved`. The contributor is the person who owns the product. Only they approve a stage, an ADR or this document.
 
 ## Stages
 

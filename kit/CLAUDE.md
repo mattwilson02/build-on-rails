@@ -4,7 +4,7 @@
 
 ## Session start
 
-A hook prints `node scripts/status.mjs`: branch, open PRs and issues, every feature's stage, and for the current feature how many criteria have tests. Use it. Say where the open work stands against its requirements and what comes next, in a few lines, before doing anything else.
+A hook runs `node scripts/status.mjs`. It prints the branch, open PRs and issues, every feature's stage, and for the current feature how many criteria have tests. Use it. Say where the open work stands against its requirements and what comes next, in a few lines, before doing anything else.
 
 ## Docs
 

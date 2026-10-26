@@ -12,6 +12,8 @@ Tests cite the criterion ID in their name: `it('AUTH-01.2 shows an error on a wr
 
 ## By layer
 
+Fill this in for your stack: what is tested automatically at each layer, and what is checked by hand.
+
 | Layer | Automated | Manual |
 | ----- | --------- | ------ |
 |       |           |        |

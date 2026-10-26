@@ -1,0 +1,22 @@
+# Build on rails
+
+> A gated workflow for building software with AI agents, and the harness that enforces it. Waterfall stages (requirements, design, spec, build, shipped), approved by a person, with the gates checked by scripts and CI. MIT licensed. Needs Node and git.
+
+A harness is execution rules plus tools for performing a task. The rules live in CLAUDE.md, a workflow document and skills. The tools are scripts that fail when a rule is broken.
+
+## Start here
+
+- [Usage](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/docs/usage.md): quick reference and one feature from start to finish
+- [Adopting it](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/docs/adopting.md): copy the kit into a repo and configure it
+
+## Reasoning
+
+- [The harness](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/docs/harness.md): rules versus tools, and what a script can and cannot check
+- [The gates](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/docs/gates.md): each gate and why it exists
+
+## The kit
+
+- [Workflow](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/kit/docs/workflow.md): stages, lanes, loops, requirement format
+- [CLAUDE.md template](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/kit/CLAUDE.md): the standing rules for the agent
+- [check-docs](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/kit/scripts/check-docs.mjs): the checker CI runs
+- [Example feature](https://raw.githubusercontent.com/mattwilson02/build-on-rails/main/examples/feature.md): a filled-in feature file

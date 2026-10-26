@@ -21,17 +21,17 @@ Approvals are dated fields the contributor sets by hand. Nothing else moves a fe
 
 The example is `examples/feature.md`, a daily reminder with the prefix `REM`.
 
-1. **Open a session.** The hook prints branch, open PRs and issues, every feature's stage, and how many of the current feature's criteria have tests. The agent summarises it and says what comes next.
+1. **Open a session.** The session-start hook (a Claude Code feature) runs `status.mjs`. It prints the branch, open PRs and issues, every feature's stage, and how many of the current feature's criteria have tests. The agent summarises it and says what comes next.
 2. **Requirements.** You describe the feature. The agent asks what it is for, then drafts `REM-01 F: Set a daily reminder` with criteria `.1`, `.2`, and `.3 [manual]`. It runs `check-docs`. You read it, correct it, and set `approved-requirements: 2026-01-12`. The agent does not.
 3. **Design.** You design the screens and states and put the link in `design:`. A feature with no screens sets `design: none`. You set `approved-design`.
-4. **Spec.** The agent writes the approach in plain words. If it hits a decision that is hard to reverse, it stops and talks it through with you. It does not hand you a menu. What you settle goes into an ADR as `proposed`. You accept it, then set `approved-spec`. Each of these is its own `docs` commit, before any code.
-5. **Build.** The feature is now at `stage: build`. The agent writes code and tests. Each test names the criterion it proves: `it('REM-01.2 replaces the old time')`. `check-docs` warns on any criterion with no test.
+4. **Spec.** The agent writes the approach in plain words. If it hits a decision that is hard to reverse, it stops and talks it through with you. It does not hand you a menu. What you settle goes into an ADR as `proposed`. You accept it, then set `approved-spec` and move the feature to `stage: build`. The spec and each ADR go in their own `docs` commits, before any code.
+5. **Build.** The agent writes code and tests. Each test names the criterion it proves: `it('REM-01.2 replaces the old time')`. `check-docs` warns on any criterion with no test.
 6. **The PR.** A `feat` PR must cite requirement IDs from a feature at `build`, carry a real `Manual check:` line (device or browser, what you tried, what happened), and fit in 20 lines. You write it. The agent can draft one from the template.
 7. **Merge and ship.** Merging approves the build. The same PR sets `stage: shipped` and adds a line under `## Unreleased` in `CHANGELOG.md`. CI fails a shipped feature with an unproven criterion or no changelog line.
 
 ## The rest of the workflow
 
-**Fast lane.** A `fix`, `chore`, `refactor`, `docs` and similar PR needs no feature file and no issue. CI blocks it if it adds a screen, endpoint or ADR, or changes a requirement. Those go the full lane.
+**Fast lane.** Any PR that is not a `feat` (`fix`, `chore`, `refactor`, `docs` and so on) needs no feature file and no issue. CI blocks it if it adds a screen, endpoint or ADR, or changes a requirement. Those go the full lane.
 
 **A defect after ship.** Open an issue from the Defect template, cite the criterion that broke, and say which stage's document was wrong. Above build, the approvals from that stage down are cleared and the stage is set back to it. The fixing PR sets them again.
 

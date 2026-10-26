@@ -24,12 +24,13 @@ requirements → design → spec → build → shipped
 - Small changes take a fast lane. CI decides the lane from the PR title and diff, not from the author's say-so.
 - Defects and new requirements go back to the stage whose document is wrong.
 
-See [docs/gates.md](docs/gates.md).
+See [docs/gates.md](docs/gates.md). To see a feature go through it start to finish, read [docs/usage.md](docs/usage.md).
 
 ## What is here
 
 | Path | What |
 | ---- | ---- |
+| [docs/usage.md](docs/usage.md) | Start here: the quick reference and one feature end to end |
 | [docs/](docs) | The thinking: the harness, the gates, how to adopt it |
 | [kit/](kit) | Copy this into your repo: workflow docs, templates, scripts, CI, hooks, skills, `CLAUDE.md` |
 | [examples/](examples) | A filled-in feature file |

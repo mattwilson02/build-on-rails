@@ -1,0 +1,24 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  kit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Kit script tests
+        run: node --test kit/scripts/*.test.mjs
+      - name: Example feature passes check-docs
+        run: |
+          cp -R kit/. "$RUNNER_TEMP/try"
+          cp examples/feature.md "$RUNNER_TEMP/try/docs/features/reminders.md"
+          cd "$RUNNER_TEMP/try" && git init -q -b main && node scripts/check-docs.mjs

@@ -1,4 +1,9 @@
+<p align="center"><img src="docs/assets/banner.png" alt="Put the agent on rails. A train on a horizontal line passes five stations: requirements, design, spec, build, shipped. CI barriers sit between them, and a return line runs back from Shipped."></p>
+
 # Build on rails
+
+[![Tests](https://github.com/mattwilson02/build-on-rails/actions/workflows/test.yml/badge.svg)](https://github.com/mattwilson02/build-on-rails/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-2563eb.svg)](LICENSE)
 
 A gated workflow for building software with AI agents, and the harness that enforces it.
 
@@ -25,6 +30,12 @@ requirements → design → spec → build → shipped
 - Defects and new requirements go back to the stage whose document is wrong.
 
 See [docs/gates.md](docs/gates.md). To see a feature go through it start to finish, read [docs/usage.md](docs/usage.md).
+
+## What a failed gate looks like
+
+![Terminal output from check-docs: one feature is at the spec stage without a design approval, and a shipped feature has a criterion no test cites. The command exits with code 1.](docs/assets/gate-fails.png)
+
+CI runs the same check on every pull request, so neither of these can merge.
 
 ## What is here
 
